@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	double wages[10] = { 10000.0, 20000.0, 30000.0 ,40000.0};
+	short stacks[10] = { 3,2,1 };
+
+	double *pw = wages;
+	short* ps = &stacks[0];
+
+	cout << "pw=" << pw << ", *pw =" << *pw << endl;
+	pw = pw + 1;
+	cout << "pw+1=" << pw << ", *pw+1=" << *pw << endl;
+
+	cout << "ps=" << ps << ", *ps=" << *ps << endl;
+	ps = ps + 1;
+	cout << "ps+1=" << ps << ", *ps+1=" << *ps << endl;
+
+	cout << "stacks[0]=" << stacks[0] << endl;
+	cout << "stacks[1]=" << stacks[1] << endl;
+
+	cout << "*stacks=" << *stacks << endl;
+	cout << "*(stacks+1)=" << *(stacks+1) << endl;
+
+	cout << "sizeof(wages)=" << sizeof(wages) << endl;
+	cout << "sizeof(stacks)=" << sizeof(stacks) << endl;
+
+	cout << "sizeof(pw) = "<< sizeof(pw) << endl;
+	cout << "sizeof(ps)=" << sizeof(ps) << endl;
+	short tell[10];
+	cout << tell << endl;
+	cout << &tell << endl;
+
+
+	return 0;
+
+
+
+}
