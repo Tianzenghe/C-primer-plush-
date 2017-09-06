@@ -1,0 +1,32 @@
+//二维数组
+#include<iostream>
+using namespace std;
+const int Cities = 5;
+const int Years = 4;
+int main()
+{
+	const char *cities[Cities] =//指针数组
+	{
+		"沈阳",
+		"北京",
+		"广州",
+		"深证",
+		"杭州"
+	};
+	int max[Years][Cities] =
+	{
+		{96, 400, 545, 56, 14},
+		{963, 4, 5435, 45642,314 },
+		{962, 40, 5415, 556, 134 },
+		{961, 4000, 5451, 156, 154 }		
+	};
+	cout << "Maximum tempertures for 2008 - 2011\n\n";
+	for (int city = 0; city < Cities; ++city)
+	{
+		cout << cities[city] << ":\t";
+		for (int year = 0; year < Years; ++year)
+			cout << max[year][city] << "\t";
+		cout << endl;
+	}
+	return 0;
+}
