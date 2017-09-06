@@ -1,3 +1,4 @@
+//每次读取一个字符,直到遇到EOF的输入
 #include<iostream>
 using namespace std;
 int main()
