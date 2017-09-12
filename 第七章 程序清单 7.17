@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+
+const int Len = 66;
+const int Divs = 6;
+void subdvide(char ar[], int low, int high, int level);
+int main()
+{
+	char ruler[Len];
+	int i;
+	for (i = 1; i < Len - 2; i++)
+		ruler[i] = ' ';
+	ruler[Len - 1] = '\0';
+	int max = Len - 2;
+	int min = 0;
+	ruler[min] = '|';
+	ruler[max] = '|';
+	cout << ruler << endl;
+	for (i = 1; i <= Divs; i++)
+	{
+		subdvide(ruler, min, max, i);
+		cout << ruler << endl;
+			for (int j = 1; j < Len - 2; j++)
+				ruler[j] = ' ';
+	}
+	return 0;
+}
+void subdvide(char ar[], int low, int high, int level)
+{
+	if (level == 0)
+		return;
+	int mid = (high + low) / 2;
+	if (level == 6)
+		ar[mid] = '6';
+	else if (level == 5)
+		ar[mid] = '5';
+	else if (level == 4)
+		ar[mid] = '4';
+	else if (level == 3)
+		ar[mid] = '3';
+	else if (level == 2)
+		ar[mid] = '2';
+	else if (level == 1)
+		ar[mid] = '1';
+	subdvide(ar, low, mid, level - 1);
+	subdvide(ar, mid, high, level - 1);
+}
